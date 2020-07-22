@@ -9,19 +9,20 @@
 /* Begin PBXBuildFile section */
 		5195431624C6C58900FB4077 /* ServiceResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195431524C6C58900FB4077 /* ServiceResultViewController.swift */; };
 		5195431824C6C5B100FB4077 /* ServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195431724C6C5B100FB4077 /* ServiceDetailViewController.swift */; };
+		51A62BDE24C86EDF0025BFFE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A62BDD24C86EDF0025BFFE /* HomeViewController.swift */; };
 		51D7772324C6BAF3006C3A0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D7772224C6BAF3006C3A0E /* AppDelegate.swift */; };
 		51D7772524C6BAF3006C3A0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D7772424C6BAF3006C3A0E /* SceneDelegate.swift */; };
 		51D7772724C6BAF3006C3A0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D7772624C6BAF3006C3A0E /* ViewController.swift */; };
 		51D7772A24C6BAF3006C3A0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51D7772824C6BAF3006C3A0E /* Main.storyboard */; };
 		51D7772C24C6BAF8006C3A0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51D7772B24C6BAF8006C3A0E /* Assets.xcassets */; };
 		51D7772F24C6BAF8006C3A0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51D7772D24C6BAF8006C3A0E /* LaunchScreen.storyboard */; };
-		51D7773A24C6C137006C3A0E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D7773924C6C137006C3A0E /* HomeViewController.swift */; };
 		51DB990724C6C35000F913C1 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB990624C6C35000F913C1 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5195431524C6C58900FB4077 /* ServiceResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResultViewController.swift; sourceTree = "<group>"; };
 		5195431724C6C5B100FB4077 /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
+		51A62BDD24C86EDF0025BFFE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		51D7771F24C6BAF3006C3A0E /* LastDevContest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastDevContest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D7772224C6BAF3006C3A0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51D7772424C6BAF3006C3A0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +31,6 @@
 		51D7772B24C6BAF8006C3A0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51D7772E24C6BAF8006C3A0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51D7773024C6BAF8006C3A0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		51D7773924C6C137006C3A0E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		51DB990624C6C35000F913C1 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,7 +98,7 @@
 				51D7772624C6BAF3006C3A0E /* ViewController.swift */,
 				5195431524C6C58900FB4077 /* ServiceResultViewController.swift */,
 				5195431724C6C5B100FB4077 /* ServiceDetailViewController.swift */,
-				51D7773924C6C137006C3A0E /* HomeViewController.swift */,
+				51A62BDD24C86EDF0025BFFE /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,8 +178,8 @@
 				51D7772324C6BAF3006C3A0E /* AppDelegate.swift in Sources */,
 				51DB990724C6C35000F913C1 /* Service.swift in Sources */,
 				51D7772524C6BAF3006C3A0E /* SceneDelegate.swift in Sources */,
-				51D7773A24C6C137006C3A0E /* HomeViewController.swift in Sources */,
 				5195431624C6C58900FB4077 /* ServiceResultViewController.swift in Sources */,
+				51A62BDE24C86EDF0025BFFE /* HomeViewController.swift in Sources */,
 				5195431824C6C5B100FB4077 /* ServiceDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
