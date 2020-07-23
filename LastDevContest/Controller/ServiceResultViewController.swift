@@ -3,7 +3,10 @@ import UIKit
 class ServiceResultViewController: UIViewController {
 
     //    var messages : [Message] = []
-
+    var pick1 : String = "강원도"
+    var pick2 : String = "강원도"
+    var keyword : String = ""
+    var timeIsTrue : Bool = true
     
     var services : [Service] = []
 

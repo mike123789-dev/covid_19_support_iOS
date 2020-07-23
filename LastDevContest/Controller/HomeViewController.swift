@@ -39,11 +39,10 @@ class HomeViewController: UIViewController {
     var pick1Row = 0
     var pick2Row = 0
     
-    var keyWord : String = ""
-    
     @IBOutlet weak var picker1: UIPickerView!
     @IBOutlet weak var picker2: UIPickerView!
-    
+    @IBOutlet weak var keywordTextField: UITextField!
+    @IBOutlet weak var isTimeTrue: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,19 +52,36 @@ class HomeViewController: UIViewController {
         self.picker2.delegate = self
         self.picker2.dataSource = self
         
+        self.keywordTextField.delegate = self
+        
         pick1 = pickData.keys.sorted()
         pick2 = pickData["강원도"]?.sorted() as! [String]
     }
-    @IBAction func textField(_ sender: UITextField) {
-        keyWord = sender.text!
-    }
+
     @IBAction func pressedButton(_ sender: UIButton) {
-        print(keyWord)
-        print(pick1[pick1Row])
-        print(pick2[pick2Row])
         
+        if let keyWord = keywordTextField.text {
+            print(keyWord)
+            print(pick1[pick1Row])
+            print(pick2[pick2Row])
+            print(isTimeTrue.isOn)
+            performSegue(withIdentifier: "searchKeyword", sender: self)
+        }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "searchKeyword"){
+            let serviceResultVC = segue.destination as! ServiceResultViewController
+//            print(keyWord)
+//            print(pick1[pick1Row])
+//            print(pick2[pick2Row])
+//            print(isTimeTrue.isOn)
+            serviceResultVC.pick1 = self.pick1[pick1Row]
+            serviceResultVC.pick2 = self.pick2[pick2Row]
+            serviceResultVC.keyword = self.keywordTextField.text ?? ""
+            serviceResultVC.timeIsTrue = self.isTimeTrue.isOn
+        }
+    }
     
 }
 
@@ -109,4 +125,18 @@ extension HomeViewController : UIPickerViewDelegate, UIPickerViewDataSource{
         }
     }
 
+}
+
+//MARK: - UITextFieldDelegate
+extension HomeViewController : UITextFieldDelegate{
+           func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField.text != ""{
+            return true
+        }
+        else{
+            textField.placeholder = "TYPE SOMETHING!"
+            print("TYPE SOMETHING!")
+            return false
+        }
+    }
 }
