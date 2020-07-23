@@ -34,6 +34,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="1Wz-yT-wFp"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jg4-it-hZm">
                                 <rect key="frame" x="153" y="699" width="109" height="41"/>
@@ -41,11 +44,16 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <state key="normal" title="서비스 조회"/>
                                 <connections>
+                                    <action selector="pressedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dT3-cV-DHd"/>
                                     <segue destination="Fhf-Ow-nXu" kind="show" id="tWs-Mj-XUF"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aEM-Co-bMP">
-                                <rect key="frame" x="10" y="177" width="394" height="216"/>
+                                <rect key="frame" x="10" y="177" width="192" height="211"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RYK-h8-miC">
+                                <rect key="frame" x="202" y="177" width="192" height="211"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                         </subviews>
@@ -54,7 +62,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="정부 지원 맞춤형 서비스" id="SLc-SY-g1g"/>
                     <connections>
-                        <outlet property="picker" destination="aEM-Co-bMP" id="c9b-WK-xcB"/>
+                        <outlet property="picker1" destination="aEM-Co-bMP" id="g1T-s1-sg5"/>
+                        <outlet property="picker2" destination="RYK-h8-miC" id="fle-0V-ecQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

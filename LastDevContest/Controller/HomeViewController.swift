@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class HomeViewController: UIViewController {
     let pickData =
     [
         "강원도" : ["강원도" , "삼척시", "양구군", "양양군", "철원군", "홍천군"],
@@ -30,33 +30,83 @@ class HomeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         "대전광역시" : ["대전광역시" , "대덕구", "동구", "서구","유성구","중구"],
         "제주특별자치도" : ["제주특별자치도"],
         "전국" : ["고용노동부" , "과학기술정보통신부", "교육부", "국세청","국토교통부","금융위원회","농림축산식품부" , "보건복지부", "산림청", "산업통상자원부","중소벤처기업부","특허청","행정안전부", "국민연금공단", "도로교통공단", "예금보험공사","한국공항공사","한국관광공사","한국농수산식품유통공사" , "한국동서발전(주)", "한국문화정보원", "한국소방산업기술원","한국소비자원","한국장애인고용공단","한국학중앙연구원"],
-        
-        
+        "울산광역시" : ["울산광역시","남구","동구","북구","울주군","울산항만공사"]
     ]
     
     var pick1 : [String] = []
+    var pick2 : [String] = []
     
-
-    @IBOutlet weak var picker: UIPickerView!
+    var pick1Row = 0
+    var pick2Row = 0
+    
+    var keyWord : String = ""
+    
+    @IBOutlet weak var picker1: UIPickerView!
+    @IBOutlet weak var picker2: UIPickerView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.picker.delegate = self
-        self.picker.dataSource = self
+        self.picker1.delegate = self
+        self.picker1.dataSource = self
+        self.picker2.delegate = self
+        self.picker2.dataSource = self
         
         pick1 = pickData.keys.sorted()
+        pick2 = pickData["강원도"]?.sorted() as! [String]
     }
+    @IBAction func textField(_ sender: UITextField) {
+        keyWord = sender.text!
+    }
+    @IBAction func pressedButton(_ sender: UIButton) {
+        print(keyWord)
+        print(pick1[pick1Row])
+        print(pick2[pick2Row])
+        
+    }
+    
+    
+}
 
+
+
+
+
+//MARK: - Pickerview
+
+
+
+extension HomeViewController : UIPickerViewDelegate, UIPickerViewDataSource{
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        pick1.count
+        if pickerView == picker1 {
+             return pick1.count
+        }
+        return pick2.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        pick1[row]
+        
+        if pickerView == picker1 {
+            pick1Row = row
+             return pick1[row]
+        }
+        pick2Row = row
+        return pick2[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == picker1{
+            pick1Row = row
+            let pick1Key = pick1[pick1Row]
+            pick2 = pickData[pick1Key]!
+            picker2.selectRow(0, inComponent: 0, animated: true)
+            self.picker2.reloadAllComponents()
+            
+        }
     }
 
 }
