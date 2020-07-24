@@ -5,6 +5,7 @@ import Firebase
 class ServiceDetailViewController: UIViewController {
 
     var serviceID : String = ""
+    var errorCount : Int = 0
     
     @IBOutlet weak var serviceText: UILabel!
 
@@ -15,6 +16,8 @@ class ServiceDetailViewController: UIViewController {
     @IBOutlet weak var text5: UITextView!
     @IBOutlet weak var text6: UITextView!
     @IBOutlet weak var text7: UITextView!
+    
+
     
     
     let db =
@@ -49,6 +52,7 @@ class ServiceDetailViewController: UIViewController {
                 self.text5.text = document["구비서류"] as! String
                 self.text6.text = document["문의처 전화번호"] as! String
                 self.text7.text = document["서비스 상세 주소"] as! String
+                self.errorCount = document["오류 신고 수"] as! Int
 
                 
             } else {
@@ -68,6 +72,15 @@ class ServiceDetailViewController: UIViewController {
     }
     
     @IBAction func pressedErrorButton(_ sender: Any) {
+        
+        let docRef = db.collection(collectionName).document(serviceID)
+        docRef.updateData(["오류 신고 수" : errorCount+1])
+        
+        let alertController = UIAlertController(title: "오류를 보냈습니다", message:
+            "오류 접수 갯수 :  \(errorCount) => \(errorCount+1)", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+        self.present(alertController, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
