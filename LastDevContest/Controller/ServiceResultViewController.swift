@@ -27,6 +27,7 @@ class ServiceResultViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         loadServices()
+        print("$$$$$$$$$$$$^^^^^^^^^^^^^$$$$$$$$$$$$$")
         print("pick1 :  \(pick1)")
         print("pick2 :  \(pick2)")
         print("keyword :  \(keyword)")
@@ -77,9 +78,12 @@ class ServiceResultViewController: UIViewController {
                             //전체 일때는 모두다
                             print("pick2 is 전체")
                             self.services.append(tempService)
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
                         }
                         else{
-                            
+                            print("pick is not 전체")
 
                             if self.pick2 == tempService.filterPick2{
                                 print("pick2 is \(self.pick2)")
