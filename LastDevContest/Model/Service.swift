@@ -6,7 +6,14 @@ struct Service {
     
     //신청절차
     let id : String
+    
+    let filterPick1 : String//지역단위
+    let filterPick2 : String//소관기관명
+    
+    let filter1 : String//지원내용
+    let filter2 : String//지원대상
 
+    
 }
 
 //dummy

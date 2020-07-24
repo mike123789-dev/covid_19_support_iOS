@@ -73,10 +73,6 @@ class HomeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "searchKeyword"){
             let serviceResultVC = segue.destination as! ServiceResultViewController
-//            print(keyWord)
-//            print(pick1[pick1Row])
-//            print(pick2[pick2Row])
-//            print(isTimeTrue.isOn)
             serviceResultVC.pick1 = self.pick1[pick1Row]
             serviceResultVC.pick2 = self.pick2[pick2Row]
             serviceResultVC.keyword = self.keywordTextField.text ?? ""
