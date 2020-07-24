@@ -1,4 +1,5 @@
 import UIKit
+import Firebase
 
 class ServiceResultViewController: UIViewController {
 
@@ -10,21 +11,51 @@ class ServiceResultViewController: UIViewController {
     
     var services : [Service] = []
 
-    let service1 = Service(serviceName: "워라밸일자리 장려금 지원 사업", howTo: "신청방법: 방문, 우편, 웹사이트(www.ei.go.kr) 등", needDocument: "신분증" , siteUrl: "www.ei.go.kr")
-    let service2 = Service(serviceName: "코로나 19 건설일용근로자 긴급생활안정자금 융자", howTo: "신청방법 : 건설근로자공제회 지사·센터를 통한 현장 신청", needDocument: "신분증" , siteUrl: "www.naver.com")
     
-
+    
+    let db = Firestore.firestore()
+    
+    let collectionName = "corona"
+    let pick1Field = "지역 단위"
+    let pick2Field = "소관기관 명"
+    let tableField = "서비스명"
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        services.append(service1)
-        services.append(service2)
+        loadServices()
         tableView.dataSource = self
         tableView.delegate = self
         
+        
+    }
+    
+    func loadServices(){
+        //먼저 hardcoding후 연결되는지 확인
+        db.collection(collectionName).whereField(pick1Field, isEqualTo: pick1).getDocuments(){
+            (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    let tempId = document.documentID
+                    let tempService = Service(serviceName: data[self.tableField] as! String, id: tempId)
+                    self.services.append(tempService)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                        
+                    }
+                
+                    print("\(tempId) => \(data[self.tableField])")
+//                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
     }
 
 

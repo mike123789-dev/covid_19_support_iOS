@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		515BFA1324C9D995002FB991 /* SearchWithKeywords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515BFA1224C9D995002FB991 /* SearchWithKeywords.swift */; };
+		5177861224CABDDD005584EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5177861124CABDDD005584EE /* GoogleService-Info.plist */; };
 		5195431624C6C58900FB4077 /* ServiceResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195431524C6C58900FB4077 /* ServiceResultViewController.swift */; };
 		5195431824C6C5B100FB4077 /* ServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195431724C6C5B100FB4077 /* ServiceDetailViewController.swift */; };
 		51A62BDE24C86EDF0025BFFE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A62BDD24C86EDF0025BFFE /* HomeViewController.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		515BFA1224C9D995002FB991 /* SearchWithKeywords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWithKeywords.swift; sourceTree = "<group>"; };
+		5177861124CABDDD005584EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5195431524C6C58900FB4077 /* ServiceResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResultViewController.swift; sourceTree = "<group>"; };
 		5195431724C6C5B100FB4077 /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
 		51A62BDD24C86EDF0025BFFE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				51D7773624C6BD12006C3A0E /* Model */,
 				51D7772B24C6BAF8006C3A0E /* Assets.xcassets */,
 				51D7772D24C6BAF8006C3A0E /* LaunchScreen.storyboard */,
+				5177861124CABDDD005584EE /* GoogleService-Info.plist */,
 				51D7773024C6BAF8006C3A0E /* Info.plist */,
 			);
 			path = LastDevContest;
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51D7772F24C6BAF8006C3A0E /* LaunchScreen.storyboard in Resources */,
+				5177861224CABDDD005584EE /* GoogleService-Info.plist in Resources */,
 				51D7772C24C6BAF8006C3A0E /* Assets.xcassets in Resources */,
 				51D7772A24C6BAF3006C3A0E /* Main.storyboard in Resources */,
 			);

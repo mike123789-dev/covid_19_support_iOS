@@ -5,14 +5,8 @@ struct Service {
     let serviceName :  String
     
     //신청절차
-    let howTo : String
-    
-    //구비서류
-    let needDocument : String
-    
-    //서비스 상세 주소
-    let siteUrl : String
-    
+    let id : String
+
 }
 
 //dummy
