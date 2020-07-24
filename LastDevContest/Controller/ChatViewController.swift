@@ -31,9 +31,11 @@ class ChatViewController : UIViewController  {
     }
     @IBAction func pressedSend(_ sender: Any) {
         print("send message")
+        let currentTime = String(Date().timeIntervalSince1970 * 1000)
+        print("curent time is :  \(currentTime)")
         db.collection("chatting")
             .document(serviceID).collection("message")
-            .addDocument(data: ["제목" : titleTextField.text!, "내용" :  bodyTextField.text! , "시간" : Date().timeIntervalSince1970 * 1000])
+            .addDocument(data: ["제목" : titleTextField.text!, "내용" :  bodyTextField.text! , "시간" : currentTime])
     }
     
     func loadMessages(){
