@@ -87,13 +87,18 @@ class ServiceResultViewController: UIViewController {
                                     //키워드가 비워져있을떄는 모두다
                                     self.services.append(tempService)
                                 }
-//                                else if self.keyword == tempService.
+                                else if tempService.filter1.contains(self.keyword) || tempService.filter2.contains(self.keyword){
+                                    print("found keyword")
+                                    self.services.append(tempService)
+                                }
                             }
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                            
                         }
                         
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
+                        
                     }
                 }
             }
