@@ -355,6 +355,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="114" height="90"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <state key="normal" title="채팅방 입장"/>
+                                                <connections>
+                                                    <action selector="pressedChatButton:" destination="FEU-uC-gHM" eventType="touchUpInside" id="x3T-jw-USh"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dk-jG-Va6">
                                                 <rect key="frame" x="12.5" y="110" width="89" height="90"/>
@@ -362,6 +365,9 @@
                                                 <state key="normal" title="오류 신고">
                                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="pressedErrorButton:" destination="FEU-uC-gHM" eventType="touchUpInside" id="Soe-qc-pZn"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -394,11 +400,38 @@
                         <outlet property="text5" destination="hg2-rI-fAi" id="nfb-UO-w7M"/>
                         <outlet property="text6" destination="scj-t8-2BK" id="blX-sB-rFe"/>
                         <outlet property="text7" destination="kcb-zM-NMS" id="OBV-Zx-IQV"/>
+                        <segue destination="oal-KU-MsH" kind="presentation" identifier="showMessage" id="brX-IR-Npc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVn-Wp-jwO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2966.666666666667" y="115.84821428571428"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="ioT-zl-wkd">
+            <objects>
+                <viewController id="oal-KU-MsH" customClass="ChatViewController" customModule="LastDevContest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Ap-ga-FLf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z17-DB-Xbg">
+                                <rect key="frame" x="149" y="477" width="121" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Press Dummy"/>
+                                <connections>
+                                    <action selector="pressedSend:" destination="oal-KU-MsH" eventType="touchUpInside" id="wn8-a1-U1x"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="uVh-jg-fl7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TKr-xB-gmc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3915.9420289855075" y="115.84821428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zXY-Nq-cUx">

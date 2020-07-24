@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		515BFA1324C9D995002FB991 /* SearchWithKeywords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515BFA1224C9D995002FB991 /* SearchWithKeywords.swift */; };
 		5177861224CABDDD005584EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5177861124CABDDD005584EE /* GoogleService-Info.plist */; };
+		5177861424CB087D005584EE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5177861324CB087D005584EE /* ChatViewController.swift */; };
+		5177861624CB0A81005584EE /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5177861524CB0A81005584EE /* Message.swift */; };
 		5195431624C6C58900FB4077 /* ServiceResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195431524C6C58900FB4077 /* ServiceResultViewController.swift */; };
 		5195431824C6C5B100FB4077 /* ServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195431724C6C5B100FB4077 /* ServiceDetailViewController.swift */; };
 		51A62BDE24C86EDF0025BFFE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A62BDD24C86EDF0025BFFE /* HomeViewController.swift */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		515BFA1224C9D995002FB991 /* SearchWithKeywords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWithKeywords.swift; sourceTree = "<group>"; };
 		5177861124CABDDD005584EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5177861324CB087D005584EE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		5177861524CB0A81005584EE /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5195431524C6C58900FB4077 /* ServiceResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResultViewController.swift; sourceTree = "<group>"; };
 		5195431724C6C5B100FB4077 /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
 		51A62BDD24C86EDF0025BFFE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			children = (
 				51DB990624C6C35000F913C1 /* Service.swift */,
 				515BFA1224C9D995002FB991 /* SearchWithKeywords.swift */,
+				5177861524CB0A81005584EE /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 				5195431524C6C58900FB4077 /* ServiceResultViewController.swift */,
 				5195431724C6C5B100FB4077 /* ServiceDetailViewController.swift */,
 				51A62BDD24C86EDF0025BFFE /* HomeViewController.swift */,
+				5177861324CB087D005584EE /* ChatViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -256,6 +262,8 @@
 				5195431624C6C58900FB4077 /* ServiceResultViewController.swift in Sources */,
 				515BFA1324C9D995002FB991 /* SearchWithKeywords.swift in Sources */,
 				51A62BDE24C86EDF0025BFFE /* HomeViewController.swift in Sources */,
+				5177861624CB0A81005584EE /* Message.swift in Sources */,
+				5177861424CB087D005584EE /* ChatViewController.swift in Sources */,
 				5195431824C6C5B100FB4077 /* ServiceDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

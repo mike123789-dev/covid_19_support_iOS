@@ -61,7 +61,22 @@ class ServiceDetailViewController: UIViewController {
         //arg.sizeToFit()
         arg.isScrollEnabled = true
     }
-
+    
+    @IBAction func pressedChatButton(_ sender: UIButton) {
+        print(Date().timeIntervalSince1970 * 1000)
+        performSegue(withIdentifier: "showMessage", sender: self)
+    }
+    
+    @IBAction func pressedErrorButton(_ sender: Any) {
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showMessage"){
+            let chatVC = segue.destination as! ChatViewController
+            chatVC.serviceID = self.serviceID
+        }
+        
+    }
 
 }
 
