@@ -23,6 +23,8 @@ class ServiceDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("thisis detail view")
+        print(serviceID)
         adjustUITextViewHeight(arg: text1)
         adjustUITextViewHeight(arg: text2)
         adjustUITextViewHeight(arg: text3)
@@ -49,8 +51,6 @@ class ServiceDetailViewController: UIViewController {
                 self.text7.text = document["서비스 상세 주소"] as! String
 
                 
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
             } else {
                 print("Document does not exist")
             }

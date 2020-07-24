@@ -10,9 +10,7 @@ class ServiceResultViewController: UIViewController {
     var timeIsTrue : Bool = true
     
     var services : [Service] = []
-
     var serviceID : String = ""
-    
     
     let db = Firestore.firestore()
     
@@ -52,7 +50,6 @@ class ServiceResultViewController: UIViewController {
                         
                     }
                 
-                    print("\(self.serviceID) => \(data[self.tableField])")
 //                    print("\(document.documentID) => \(document.data())")
                 }
             }
@@ -62,6 +59,8 @@ class ServiceResultViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "showDetail"){
             let serviceDetailVC = segue.destination as! ServiceDetailViewController
+            print("prepare segue")
+            print(serviceID)
             serviceDetailVC.serviceID = serviceID
         }
     }
@@ -92,6 +91,10 @@ extension ServiceResultViewController : UITableViewDataSource{
 
 extension ServiceResultViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("didSelectRowAt")
+        serviceID = services[indexPath.row].id
+        print(serviceID)
         performSegue(withIdentifier: "showDetail", sender: self)
     }
+    
 }
