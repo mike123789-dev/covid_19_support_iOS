@@ -11,6 +11,7 @@ class ServiceResultViewController: UIViewController {
     
     var services : [Service] = []
 
+    var serviceID : String = ""
     
     
     let db = Firestore.firestore()
@@ -43,21 +44,32 @@ class ServiceResultViewController: UIViewController {
             } else {
                 for document in querySnapshot!.documents {
                     let data = document.data()
-                    let tempId = document.documentID
-                    let tempService = Service(serviceName: data[self.tableField] as! String, id: tempId)
+                    self.serviceID = document.documentID
+                    let tempService = Service(serviceName: data[self.tableField] as! String, id: self.serviceID)
                     self.services.append(tempService)
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                         
                     }
                 
-                    print("\(tempId) => \(data[self.tableField])")
+                    print("\(self.serviceID) => \(data[self.tableField])")
 //                    print("\(document.documentID) => \(document.data())")
                 }
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "showDetail"){
+            let serviceDetailVC = segue.destination as! ServiceDetailViewController
+            serviceDetailVC.serviceID = serviceID
+        }
+    }
+    
 
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if(segue.identifier == "searchKeyword"){
+//            let serviceResultVC = segue.destination as! ServiceResultViewController
 
 }
 
@@ -72,11 +84,14 @@ extension ServiceResultViewController : UITableViewDataSource{
         
         return cell
     }
+    
+    
 }
+
 
 
 extension ServiceResultViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        performSegue(withIdentifier: "showDetail", sender: self)
     }
 }
