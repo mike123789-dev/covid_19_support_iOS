@@ -75,9 +75,17 @@ class ServiceResultViewController: UIViewController {
                         print(tempService)
                         
                         if self.pick2 == "전체"{
-                            //전체 일때는 모두다
                             print("pick2 is 전체")
-                            self.services.append(tempService)
+
+                            //전체 일때는 모두다
+                            if self.keyword == ""{
+                                //키워드가 비워져있을떄는 모두다
+                                self.services.append(tempService)
+                            }
+                            else if tempService.filter1.contains(self.keyword) || tempService.filter2.contains(self.keyword){
+                                print("found keyword")
+                                self.services.append(tempService)
+                            }
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
                             }

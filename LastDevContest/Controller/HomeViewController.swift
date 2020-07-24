@@ -131,8 +131,6 @@ extension HomeViewController : UITextFieldDelegate{
             return true
         }
         else{
-            textField.placeholder = "TYPE SOMETHING!"
-            print("TYPE SOMETHING!")
             return false
         }
     }

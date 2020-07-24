@@ -67,7 +67,6 @@ class ServiceDetailViewController: UIViewController {
     }
     
     @IBAction func pressedChatButton(_ sender: UIButton) {
-        print(Date().timeIntervalSince1970 * 1000)
         performSegue(withIdentifier: "showMessage", sender: self)
     }
     
