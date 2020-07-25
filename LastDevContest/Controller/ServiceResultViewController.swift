@@ -142,7 +142,6 @@ extension ServiceResultViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath)
         cell.textLabel?.text = services[indexPath.row].serviceName
-        
         return cell
     }
     
