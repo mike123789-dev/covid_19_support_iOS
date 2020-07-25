@@ -5,17 +5,6 @@
 설치를 하기위해서는 해당 폴더 디렉터리로 터미널에 들어간후에
 
 
-> pod init
-
-pod file에 
-
->  pod 'IQKeyboardManagerSwift'
-
->  pod 'Firebase/Auth'
-
->  pod 'Firebase/Firestore'
-
-를 추가한후에 
 
 > pod install
 
