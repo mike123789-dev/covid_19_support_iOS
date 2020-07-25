@@ -10,7 +10,9 @@
 pod file에 
 
 >  pod 'IQKeyboardManagerSwift'
+
 >  pod 'Firebase/Auth'
+
 >  pod 'Firebase/Firestore'
 
 를 추가한후에 
