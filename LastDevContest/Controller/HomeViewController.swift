@@ -9,6 +9,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    @IBOutlet weak var titleLabl: UILabel!
     let pickData =
         [   "전체" : ["전체"],
         "강원도" : ["전체","강원도" , "삼척시", "양구군", "양양군", "철원군", "홍천군"],
@@ -51,6 +52,7 @@ class HomeViewController: UIViewController {
         self.picker1.dataSource = self
         self.picker2.delegate = self
         self.picker2.dataSource = self
+        titleLabl.text = "COVID-19 \n 정부 지원 맞춤형 서비스"
         
         self.keywordTextField.delegate = self
         
@@ -58,7 +60,15 @@ class HomeViewController: UIViewController {
         pick2 = pickData["강원도"]!
 //        pick2 = pickData["강원도"]?.sorted() as! [String]
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
 
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
     @IBAction func pressedButton(_ sender: UIButton) {
         
         if let keyWord = keywordTextField.text {
